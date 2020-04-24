@@ -11,7 +11,10 @@ function App() {
     return (
         <Router>
             <div className="App">
-                <header>Hey there, this is the Header.</header>
+                <header>
+                    {' '}
+                    <h1>Welcome to the Bubble App!</h1>
+                </header>
                 <Switch>
                     <Route exact path="/" component={Login} />
                     <PrivateRouter

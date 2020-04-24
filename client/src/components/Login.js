@@ -39,9 +39,6 @@ class Login extends React.Component {
     render() {
         return (
             <>
-                <h1>Welcome to the Bubble App!</h1>
-                <br />
-                <br />
                 <h4>Login required to continue:</h4>
                 <form onSubmit={this.login}>
                     Username:
