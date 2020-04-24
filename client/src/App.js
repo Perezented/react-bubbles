@@ -16,7 +16,7 @@ function App() {
                     <Route exact path="/" component={Login} />
                     <PrivateRouter
                         exact
-                        path="protected"
+                        path="/protected"
                         component={BubblePage}
                     />
                     <Route component={Login} />

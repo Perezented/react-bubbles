@@ -26,8 +26,8 @@ class Login extends React.Component {
             .then((res) => {
                 // console.log(res);
                 // console.log(this.props.history);
-                localStorage.setItem('token', JSON.stringify(res.data.payload));
                 this.props.history.push('/protected');
+                localStorage.setItem('token', JSON.stringify(res.data.payload));
             })
             .catch((err) => {
                 console.log(err);
@@ -40,28 +40,28 @@ class Login extends React.Component {
         return (
             <>
                 <h1>Welcome to the Bubble App!</h1>
-                <section>
-                    <h4>Login required to continue:</h4>
-                    <form onSubmit={this.login}>
-                        Username:
-                        <input
-                            type="text"
-                            name="username"
-                            value={this.state.creds.username}
-                            onChange={this.handleChanges}
-                        />
-                        <br />
-                        Password:
-                        <input
-                            type="text"
-                            name="password"
-                            value={this.state.creds.password}
-                            onChange={this.handleChanges}
-                        />
-                        <br />
-                        <button>Login</button>
-                    </form>
-                </section>{' '}
+                <br />
+                <br />
+                <h4>Login required to continue:</h4>
+                <form onSubmit={this.login}>
+                    Username:
+                    <input
+                        type="text"
+                        name="username"
+                        value={this.state.creds.username}
+                        onChange={this.handleChanges}
+                    />
+                    <br />
+                    Password:
+                    <input
+                        type="text"
+                        name="password"
+                        value={this.state.creds.password}
+                        onChange={this.handleChanges}
+                    />
+                    <br />
+                    <button>Login</button>
+                </form>
             </>
         );
     }
