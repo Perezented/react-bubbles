@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { authWithAxios } from './utils/authWithAxios';
+import { authWithAxios } from '../utils/authWithAxios';
 
 class Login extends React.Component {
     state = {
@@ -21,7 +21,7 @@ class Login extends React.Component {
 
     login = (e) => {
         e.preventDefault();
-        authenticAxios()
+        authWithAxios()
             .post('/api/login', this.state.creds)
             .then((res) => {
                 // console.log(res);
@@ -53,7 +53,7 @@ class Login extends React.Component {
                         <br />
                         Password:
                         <input
-                            type="password"
+                            type="text"
                             name="password"
                             value={this.state.creds.password}
                             onChange={this.handleChanges}

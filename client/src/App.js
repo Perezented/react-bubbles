@@ -19,6 +19,7 @@ function App() {
                         path="protected"
                         component={BubblePage}
                     />
+                    <Route component={Login} />
                 </Switch>
             </div>
         </Router>
