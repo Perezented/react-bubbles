@@ -28,8 +28,12 @@ const ColorList = ({ colors, updateColors }) => {
         console.log('colorToEdit: ', colorToEdit);
         console.log(colorToEdit.color, colorToEdit.code);
         authWithAxios()
-            .put(`/api/colors/${colorToEdit.id}`)
-            .then((res) => console.log(res));
+            .put(`/api/colors/${colorToEdit.id}`, colorToEdit)
+            .then((res) => {
+                setColorToEdit(res.data);
+                push('/protect'); //add loader!!////////////////////////////////////////
+                push('/protected');
+            });
         // Make a put request to save your updated color
         // think about where will you get the id from...
         // where is is saved right now?
@@ -37,6 +41,18 @@ const ColorList = ({ colors, updateColors }) => {
 
     const deleteColor = (color) => {
         // make a delete request to delete this color
+        console.log(color);
+        console.log('color', color);
+        authWithAxios()
+            .delete(`/api/colors/${color.id}`)
+            .then((res) => {
+                console.log(res);
+                push('/protect');
+                push('/protected');
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     };
 
     return (
