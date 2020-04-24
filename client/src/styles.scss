@@ -8,6 +8,8 @@ body,
     height: auto;
     margin: 0;
     padding: 1% 0;
+    background-color: rgb(44, 44, 44);
+    color: white;
 }
 
 .App {
@@ -24,6 +26,7 @@ body,
         display: flex;
         align-items: flex-end;
         margin-top: 3vh;
+        width: 20%;
     }
 }
 
@@ -41,7 +44,7 @@ body,
     height: 100%;
     width: 300px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-
+    background-color: rgba(255, 255, 255, 0.055);
     ul {
         list-style: none;
         text-align: start;

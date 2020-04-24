@@ -31,7 +31,7 @@ const ColorList = ({ colors, updateColors }) => {
             .put(`/api/colors/${colorToEdit.id}`, colorToEdit)
             .then((res) => {
                 setColorToEdit(res.data);
-                push('/protect'); //add loader!!////////////////////////////////////////
+                push('/loader'); //add loader!!////////////////////////////////////////
                 push('/protected');
             });
         // Make a put request to save your updated color
@@ -47,7 +47,7 @@ const ColorList = ({ colors, updateColors }) => {
             .delete(`/api/colors/${color.id}`)
             .then((res) => {
                 console.log(res);
-                push('/protect');
+                push('/loader');
                 push('/protected');
             })
             .catch((err) => {
@@ -69,7 +69,13 @@ const ColorList = ({ colors, updateColors }) => {
                                     deleteColor(color);
                                 }}
                             >
-                                x
+                                <strong
+                                    style={{
+                                        fontSize: '1.5rem',
+                                    }}
+                                >
+                                    x
+                                </strong>
                             </span>{' '}
                             {color.color}
                         </span>
